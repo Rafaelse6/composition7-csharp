@@ -6,7 +6,7 @@ namespace Taxes.Entities
 
         public Company() { }
 
-        public Company(int numberOfEmployees, string name, double anuallIncome) : base(name, anuallIncome)
+        public Company(string name, double anuallIncome, int numberOfEmployees) : base(name, anuallIncome)
         {
             NumberOfEmployees = numberOfEmployees;
         }
@@ -16,13 +16,13 @@ namespace Taxes.Entities
             double firstIncomeCase = AnuallIncome * 14 / 100;
             double secondIncomeCase = AnuallIncome * 16 / 100;
 
-            if (NumberOfEmployees <= 10)
+            if (NumberOfEmployees < 10)
             {
-                return AnuallIncome - secondIncomeCase;
+                return secondIncomeCase;
             }
             else
             {
-                return AnuallIncome - firstIncomeCase;
+                return firstIncomeCase;
             }
         }
     }
