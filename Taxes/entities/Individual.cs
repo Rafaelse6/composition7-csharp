@@ -4,6 +4,8 @@ namespace Taxes.Entities
     {
         public double HealthExpenditures { get; set; }
 
+        public Individual() { }
+
         public Individual(string name, double anuallIncome, double healthExpenditures) : base(name, anuallIncome)
         {
             HealthExpenditures = healthExpenditures;
